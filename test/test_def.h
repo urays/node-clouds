@@ -1,0 +1,10 @@
+#ifndef _NCLOUD_TEST_DEF_H
+#define _NCLOUD_TEST_DEF_H
+
+//<!-- SELECT PROJECT TO BE TESTED! -->
+
+//#define TEST_PROJECT_CDSAR
+//#define TEST_PROJECT_CLOUDS
+#define TEST_PROJECT_SORT
+
+#endif

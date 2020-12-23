@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="test">
+      <UniqueIdentifier>{b6e988e2-73f4-4b28-baaf-6f072c5ead20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="nc">
+      <UniqueIdentifier>{7222b799-0d32-45fd-9b6f-b94f02d01b58}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\test\test_sort.c">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\nc\cdsar.c">
+      <Filter>nc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\nc\clouds.c">
+      <Filter>nc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\test_clouds.c">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\test_cdsar.c">
+      <Filter>test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\nc\cdsar.h">
+      <Filter>nc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nc\clouds.h">
+      <Filter>nc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\test\test_def.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\nc\timer.h">
+      <Filter>nc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
