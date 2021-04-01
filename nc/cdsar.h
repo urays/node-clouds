@@ -1,6 +1,6 @@
 ﻿/*<!-- author:urays email:urays@foxmail.com date: 2020.10.28 -->*/
-#ifndef _NCLOUD_STD_STRUCTURE_H
-#define _NCLOUD_STD_STRUCTURE_H
+#ifndef _U_STD_STRUCTURE_H
+#define _U_STD_STRUCTURE_H
 
 #ifdef __cplusplus
 #define _EXTERN_ extern "C"
@@ -138,7 +138,7 @@ typedef struct __nc_heap {
 	void(*free)(struct __nc_heap**);
 }*_pheap;
 _EXTERN_ _pheap heap_create(bool(*cmp)(const void*, const void*));
-//bool cmp_max(const void* x, const void* y) { return ((hnode*)x)->a > ((hnode*)y)->a; }  >:最大堆
+//bool cmp_max(const void* x, const void* y) { return *((int*)x) > *((int*)y); }  >:最大堆
 //bool cmp_min(const void* x, const void* y) { return ((hnode*)x)->a < ((hnode*)y)->a; }  <:最小堆
 
 //ALGORITHM

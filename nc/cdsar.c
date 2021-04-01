@@ -1,5 +1,5 @@
 ﻿#include <stdio.h>
-#include <stdlib.h> //malloc
+#include <stdlib.h> //malloc realloc
 #include <string.h>
 #include <assert.h>
 
@@ -463,44 +463,43 @@ inline bool heap_empty(_pheap _h) { return _h->_sz == 0; }
 
 void heap_insert(_pheap _h, void* _e)
 {
-	if (_h->_sz >= _h->_cap)
+	if (_h->_sz >= _h->_cap - 1)
 	{
 		_h->_dt = REALLOC(_h->_dt, void*, _h->_cap + HEAP_ADDSIZE);
 		assert(_h->_dt != NULL);
 		_h->_cap += HEAP_ADDSIZE;
 	}
 
-	uint32 i = _h->_sz;
+	uint32 i = ++_h->_sz;
 	uint32 pa = i >> 1;
 
-	for (; i > 0 && _h->_cmp(_e, _h->_dt[pa]);)
+	for (; i > 1 && _h->_cmp(_e, _h->_dt[pa]);)
 	{
 		_h->_dt[i] = _h->_dt[pa];
 		i = pa, pa >>= 1;
 	}
 	_h->_dt[i] = _e;
-	++_h->_sz;
 }
 
 void* heap_top(_pheap _h)
 {
-	if (_h->_sz == 0) { return NULL; }
-	else { return _h->_dt[0]; }
+	if (_h->_sz >= 1) { return _h->_dt[1]; }
+	else { return NULL; }
 }
 
 void* heap_pop(_pheap _h)
 {
 	if (_h->_sz == 0) { return NULL; }
 
-	void* ret = _h->_dt[0];
-	void* la = _h->_dt[--_h->_sz];
+	void* ret = _h->_dt[1];
+	void* la = _h->_dt[_h->_sz--];
 
-	uint32 pa = 0;
-	uint32 ch = (pa << 1) + 1;
+	uint32 pa = 1;
+	uint32 ch = pa << 1;
 
-	for (; ch < _h->_sz;)
+	for (; ch <= _h->_sz;)
 	{
-		if (ch < _h->_sz - 1 && _h->_cmp(_h->_dt[ch + 1], _h->_dt[ch])) { ++ch; }
+		if (ch < _h->_sz && _h->_cmp(_h->_dt[ch + 1], _h->_dt[ch])) { ++ch; }
 		if (_h->_cmp(_h->_dt[ch], la))
 		{
 			_h->_dt[pa] = _h->_dt[ch];
