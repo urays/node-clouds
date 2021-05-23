@@ -139,18 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\lib\cdsar.c" />
-    <ClCompile Include="..\lib\clouds.c" />
-    <ClCompile Include="..\test\test_clouds.c" />
-    <ClCompile Include="..\test\test_cdsar.c" />
-    <ClCompile Include="..\test\test_heap.c" />
-    <ClCompile Include="..\test\test_sort.c" />
+    <ClCompile Include="..\lib\cdsa.cpp" />
+    <ClCompile Include="..\lib\clouds.cpp" />
+    <ClCompile Include="..\tools\nc-utest\nc-utest.cpp" />
+    <ClCompile Include="..\utest\test_cdsa.cpp" />
+    <ClCompile Include="..\utest\test_clouds.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\lib\cdsar.h" />
+    <ClInclude Include="..\lib\cdsa.h" />
     <ClInclude Include="..\lib\clouds.h" />
-    <ClInclude Include="..\lib\timer.h" />
-    <ClInclude Include="..\test\test_def.h" />
+    <ClInclude Include="..\lib\utest.h" />
+    <ClInclude Include="..\utest\option.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

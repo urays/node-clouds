@@ -5,7 +5,8 @@
             "label": "Build", //launch.json的preLaunchTask相对应
             "command": "g++", 
             "args": [
-                "${workspaceFolder}/lib/*.c",
+                "${workspaceFolder}/lib/*.cpp",
+                "${workspaceFolder}/utest/*.cpp",
                 "${file}",
                 "-D __VSCODE__",
                 "-o",
@@ -13,8 +14,8 @@
                 "-g", 
                 "-Wall", 
                 "-static-libgcc",
-                "-fexec-charset=GBK", //解决中文乱码
-                "-D__USE_MINGW_ANSI_STDIO",
+                //"-fexec-charset=GBK", //解决中文乱码
+                //"-D__USE_MINGW_ANSI_STDIO",
             ], 
             "type": "shell", 
             "group": {

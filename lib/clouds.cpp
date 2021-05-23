@@ -9,7 +9,7 @@
 #define MEMOFREE(_x,_v)      do {free(_x); (_x)=(_v);}while(0)
 
 /* cnode */
-bool _cnode_list_cmp(const void* x, const void* y) {
+uint8_t _cnode_list_cmp(const void* x, const void* y) {
 	return (*(_pcnode)x).lev >= (*(_pcnode)y).lev;
 }
 
@@ -92,9 +92,9 @@ _pcnode cnode_create(int _id, int _lev, float _x, float _y)
 
 /* node cloud */
 inline void cloud_join(_pcloud _s, void* _n) { _s->_reg->add(_s->_reg, _n); }
-inline uint32 cloud_size(_pcloud _s) { return _s->_reg->size(_s->_reg); }
+inline uint32_t cloud_size(_pcloud _s) { return _s->_reg->size(_s->_reg); }
 
-_pcnode cloud_find(struct __nc_cloud* _s, bool(*cond)(const void*, const void*), const void* _o)
+_pcnode cloud_find(struct __nc_cloud* _s, uint8_t(*cond)(const void*, const void*), const void* _o)
 {
 	return (_pcnode)(_s->_reg->find(_s->_reg, cond, _o));
 }

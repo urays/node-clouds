@@ -1,45 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="test">
-      <UniqueIdentifier>{b6e988e2-73f4-4b28-baaf-6f072c5ead20}</UniqueIdentifier>
-    </Filter>
     <Filter Include="lib">
       <UniqueIdentifier>{7222b799-0d32-45fd-9b6f-b94f02d01b58}</UniqueIdentifier>
     </Filter>
+    <Filter Include="utest">
+      <UniqueIdentifier>{892b4342-0a32-443d-9ee6-c9e3645b065f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{6de86016-04c8-45c2-b194-e101da98dfda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\nc-utest">
+      <UniqueIdentifier>{7cd3d8e3-2cf6-4d6c-9171-b87c1a874485}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\test\test_sort.c">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="..\test\test_clouds.c">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="..\test\test_cdsar.c">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="..\test\test_heap.c">
-      <Filter>test</Filter>
-    </ClCompile>
-    <ClCompile Include="..\lib\cdsar.c">
+    <ClCompile Include="..\lib\cdsa.cpp">
       <Filter>lib</Filter>
     </ClCompile>
-    <ClCompile Include="..\lib\clouds.c">
+    <ClCompile Include="..\lib\clouds.cpp">
       <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utest\test_cdsa.cpp">
+      <Filter>utest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utest\test_clouds.cpp">
+      <Filter>utest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tools\nc-utest\nc-utest.cpp">
+      <Filter>tools\nc-utest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\lib\cdsar.h">
+    <ClInclude Include="..\lib\cdsa.h">
       <Filter>lib</Filter>
     </ClInclude>
     <ClInclude Include="..\lib\clouds.h">
       <Filter>lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\lib\timer.h">
+    <ClInclude Include="..\lib\utest.h">
       <Filter>lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\test\test_def.h">
-      <Filter>test</Filter>
+    <ClInclude Include="..\utest\option.h">
+      <Filter>utest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

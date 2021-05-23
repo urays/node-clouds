@@ -19,7 +19,7 @@ rm -fr build
 mkdir build
 cd build
 
-cmake ../
+cmake ../tools/nc-utest
 tmp=$?
 echo "cmake return:" ${tmp}
 if [ ${tmp} -ne 0 ]
@@ -36,3 +36,6 @@ then
 echo "make <>return:" ${tmp}
  exit -1
 fi
+
+cd ../bin
+./nc_utest
